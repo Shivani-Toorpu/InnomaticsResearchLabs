@@ -1,0 +1,87 @@
+<!-- // 10. Flight Ticket Booking System
+// Scenario:
+// A flight booking system applies the following rules:
+// Base fare: $300
+// Additional charges:
+// Business class: +$200
+// First class: +$500
+// Luggage over 20kg: +$50 per 10kg extra
+// Discounts:
+// Students → 15% off
+// Seniors (above 60 years old) → 10% off
+// Write a function calculateFlightFare(classType, luggageWeight, isStudent, isSenior) that returns the final price. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .check-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Flight Ticket Booking</h2>
+        <select id="classType">
+            <option value="Economy">Economy</option>
+            <option value="Business">Business (+$200)</option>
+            <option value="First">First Class (+$500)</option>
+        </select>
+
+        <div>
+            <label for="luggageWeight">Enter luggage weight (kg):</label>
+            <input type="text" id="luggageWeight" placeholder="Enter luggage weight (kg)">
+        </div>
+        
+        <div class="check-group">
+            <label><input type="checkbox" id="isStudent"> Student (15% discount)</label>
+        </div>
+        <div class="check-group">
+            <label><input type="checkbox" id="isSenior"> Senior (10% discount)</label>
+        </div>
+        
+
+        <button onclick="calculateFare()">Calculate Fare</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateFlightFare(classType, luggageWeight, isStudent, isSenior) {
+            let baseFare = 300;
+            if (classType === "Business") {
+                baseFare += 200;
+            } else if (classType === "First") {
+                baseFare += 500;
+            }
+            if (luggageWeight > 20) {
+                baseFare += Math.ceil((luggageWeight - 20) / 10) * 50;
+            }
+            if (isStudent) {
+                baseFare *= 0.85;
+            } else if (isSenior) {
+                baseFare *= 0.9;
+            }
+            return baseFare;
+        }
+
+        function calculateFare() {
+            const classType = document.getElementById("classType").value;
+            const luggageWeight = parseFloat(document.getElementById("luggageWeight").value);
+            const isStudent = document.getElementById("isStudent").checked;
+            const isSenior = document.getElementById("isSenior").checked;
+            const fare = calculateFlightFare(classType, luggageWeight, isStudent, isSenior);
+            document.getElementById("result").innerText = `Flight fare: $${fare.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

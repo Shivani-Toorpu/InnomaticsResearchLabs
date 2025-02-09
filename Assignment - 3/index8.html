@@ -1,0 +1,74 @@
+<!-- // 8. Fitness Membership Plan
+// Scenario:
+// A gym offers different membership plans:
+// Basic ($20/month) → Only gym access
+// Premium ($50/month) → Gym + Personal Trainer
+// VIP ($80/month) → Gym + Trainer + Diet Plan
+// Write a function choosePlan(planType, wantsTrainer, wantsDietPlan) that suggests the best membership. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Membership Plan</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Fitness Membership Plan</h2>
+        <select id="planType">
+            <option value="Basic">Basic - $20/month</option>
+            <option value="Premium">Premium - $50/month</option>
+            <option value="VIP">VIP - $80/month</option>
+        </select>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="wantsTrainer"> Personal Trainer (+$20)</label>
+            <label><input type="checkbox" id="wantsDietPlan"> Diet Plan (+$10)</label>
+        </div>
+        <button onclick="calculatePlan()">Choose Plan</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function choosePlan(planType, wantsTrainer, wantsDietPlan) {
+            let price = 0;
+            if (planType === "Basic") {
+                price = 20;
+            } else if (planType === "Premium") {
+                price = 50;
+            } else if (planType === "VIP") {
+                price = 80;
+            }
+            if (wantsTrainer) {
+                price += 20;
+            }
+            if (wantsDietPlan) {
+                price += 10;
+            }
+            return `You have chosen the ${planType} plan. Total cost: $${price}`;
+        }
+
+        function calculatePlan() {
+            const planType = document.getElementById("planType").value;
+            const wantsTrainer = document.getElementById("wantsTrainer").checked;
+            const wantsDietPlan = document.getElementById("wantsDietPlan").checked;
+            document.getElementById("result").innerText = choosePlan(planType, wantsTrainer, wantsDietPlan);
+        }
+    </script>
+</body>
+</html>

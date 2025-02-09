@@ -1,0 +1,50 @@
+<!-- // 5. Movie Ticket Pricing with Time and Age Discount
+// Scenario:
+// A movie theater offers tickets with dynamic pricing:
+// Standard price: $12
+// Matinee show (before 5 PM) → 20% discount
+// Senior citizens (above 60) → 30% discount
+// Children (below 12) → 40% discount
+// Write a function calculateTicketPrice(age, showTime) that returns the final ticket price. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Pricing</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Movie Ticket Pricing</h2>
+        <input type="text" id="age" placeholder="Enter your age" />
+        <input type="text" id="showTime" placeholder="Enter show time (24-hour format)" />
+        <button onclick="calculateAndDisplayPrice()">Calculate Ticket Price</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateTicketPrice(age, showTime) {
+            let price = 12;
+            if (showTime < 17) {
+                price *= 0.8;
+            }
+            if (age > 60) {
+                price *= 0.7;
+            } else if (age < 12) {
+                price *= 0.6;
+            }
+            return price;
+        }
+
+        function calculateAndDisplayPrice() {
+            const age = parseInt(document.getElementById("age").value);
+            const showTime = parseFloat(document.getElementById("showTime").value);
+            const ticketPrice = calculateTicketPrice(age, showTime);
+            document.getElementById("result").innerText = `Ticket price: $${ticketPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

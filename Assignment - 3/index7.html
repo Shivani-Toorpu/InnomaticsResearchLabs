@@ -1,0 +1,52 @@
+<!-- // 7. E-commerce Coupon Redemption
+// Scenario:
+// An e-commerce store offers coupon-based discounts:
+// Coupon "DISCOUNT10" → 10% off for orders above $500
+// Coupon "FREESHIP" → Free shipping for orders above $200
+// Both coupons cannot be used together
+// Write a function applyCoupon(orderAmount, couponCode) that calculates the final price. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Coupon Redemption</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>E-commerce Coupon Redemption</h2>
+        <input type="text" id="orderAmount" placeholder="Enter order amount" />
+        <select id="couponCode">
+            <option value="None">None</option>
+            <option value="DISCOUNT10">DISCOUNT10 - 10% off (Above $500)</option>
+            <option value="FREESHIP">FREESHIP - Free shipping (Above $200)</option>
+        </select>
+        <button onclick="calculateFinalPrice()">Apply Coupon</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function applyCoupon(orderAmount, couponCode) {
+            let discount = 0;
+            let shipping = 10;
+            if (couponCode === "DISCOUNT10" && orderAmount > 500) {
+                discount = orderAmount * 0.1;
+            }
+            if (couponCode === "FREESHIP" && orderAmount > 200) {
+                shipping = 0;
+            }
+            return orderAmount - discount + shipping;
+        }
+
+        function calculateFinalPrice() {
+            const orderAmount = parseFloat(document.getElementById("orderAmount").value);
+            const couponCode = document.getElementById("couponCode").value;
+            const finalAmount = applyCoupon(orderAmount, couponCode);
+            document.getElementById("result").innerText = `Final amount: $${finalAmount.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
