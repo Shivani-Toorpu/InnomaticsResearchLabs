@@ -7,37 +7,51 @@ body {
     padding: 0;
 }
 
-/* Game Title */
-.game-title {
+/* Landing Page */
+#landing-page {
+    margin-top: 100px;
+}
+
+h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
 }
 
-/* Score, Timer, Restart in One Line */
-#score-time-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-/* Restart Button */
-#restart-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 15px;
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
     cursor: pointer;
+    border: none;
     border-radius: 5px;
 }
 
-#restart-btn:hover {
-    background-color: #0056b3;
+button:hover {
+    opacity: 0.8;
 }
 
-/* Grid */
+/* Category Buttons */
+.category-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Game Container */
+#game-container {
+    margin-top: 20px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
 #grid {
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -91,24 +105,13 @@ body {
 /* Responsive Design: Adjust for smaller screens */
 @media screen and (max-width: 400px) {
     #grid {
-        grid-template-columns: repeat(4, 70px);
-        grid-gap: 5px;
+        grid-template-columns: repeat(4, 70px); /* Reduce the box size */
+        grid-gap: 5px; /* Reduce the gap between boxes */
     }
 
     .card {
         width: 70px;
         height: 70px;
         font-size: 1.5rem;
-    }
-
-    #score-time-container {
-        flex-direction: column;
-        gap: 5px;
-        font-size: 1rem;
-    }
-
-    #restart-btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
     }
 }
