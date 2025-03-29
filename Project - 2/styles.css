@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Landing Page */
+#landing-page {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Category Buttons */
+.category-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Game Container */
+#game-container {
+    margin-top: 20px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+}
+
+.card.flipped {
+    transform: rotateY(0deg);
+    background-color: lightgreen;
+}
+
+.card.matched {
+    background-color: #28a745;
+    cursor: default;
+}
+
+/* Go Back Button */
+#go-back-btn {
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+#go-back-btn:hover {
+    background-color: darkred;
+}
+
+/* Responsive Design: Adjust for smaller screens */
+@media screen and (max-width: 400px) {
+    #grid {
+        grid-template-columns: repeat(4, 70px); /* Reduce the box size */
+        grid-gap: 5px; /* Reduce the gap between boxes */
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+}

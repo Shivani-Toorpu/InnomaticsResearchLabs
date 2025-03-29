@@ -1,0 +1,47 @@
+<!-- // 6. Job Application Filter
+// Scenario:
+// A company is hiring and requires candidates to meet the following conditions:
+// Age must be between 21 and 55
+// Experience must be at least 2 years
+// Minimum qualification: "Bachelor's Degree"
+// Write a function isEligibleForJob(age, experience, qualification) that returns whether the applicant is eligible. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Filter</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Job Application Filter</h2>
+        <input type="text" id="age" placeholder="Enter your age" />
+        <input type="text" id="experience" placeholder="Enter years of experience" />
+        <select id="qualification">
+            <option value="High School">High School</option>
+            <option value="Associate's Degree">Associate's Degree</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+        </select>
+        <button onclick="checkEligibility()">Check Eligibility</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function isEligibleForJob(age, experience, qualification) {
+            return age >= 21 && age <= 55 && experience >= 2 && qualification === "Bachelor's Degree";
+        }
+
+        function checkEligibility() {
+            const age = parseInt(document.getElementById("age").value);
+            const experience = parseFloat(document.getElementById("experience").value);
+            const qualification = document.getElementById("qualification").value;
+            const isEligible = isEligibleForJob(age, experience, qualification);
+            document.getElementById("result").innerText = isEligible ? "You are eligible for the job." : "You are not eligible for the job.";
+        }
+    </script>
+</body>
+</html>

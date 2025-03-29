@@ -1,0 +1,56 @@
+<!-- // 9. Electricity Bill Calculation with Peak Hours
+// Scenario:
+// An electricity board charges differently based on consumption and time:
+// Normal hours (8 AM - 8 PM)
+// Below 100 units → $5 per unit
+// 100-300 units → $4 per unit
+// Above 300 units → $3 per unit
+// Peak hours (8 PM - 8 AM) → Extra 10% charge on all rates
+// Write a function calculateElectricityBill(units, timeOfDay) that returns the total bill. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Electricity Bill Calculator</h2>
+        <input type="text" id="units" placeholder="Enter the number of units consumed" />
+        <select id="timeOfDay">
+            <option value="Normal">Normal Hours (8 AM - 8 PM)</option>
+            <option value="Peak">Peak Hours (8 PM - 8 AM)</option>
+        </select>
+        <button onclick="calculateBill()">Calculate Bill</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateElectricityBill(units, timeOfDay) {
+            let rate = 0;
+            if (units <= 100) {
+                rate = 5;
+            } else if (units <= 300) {
+                rate = 4;
+            } else {
+                rate = 3;
+            }
+            if (timeOfDay === "Peak") {
+                rate *= 1.1;
+            }
+            return rate * units;
+        }
+
+        function calculateBill() {
+            const units = parseInt(document.getElementById("units").value);
+            const timeOfDay = document.getElementById("timeOfDay").value;
+            const bill = calculateElectricityBill(units, timeOfDay);
+            document.getElementById("result").innerText = `Electricity bill: $${bill.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

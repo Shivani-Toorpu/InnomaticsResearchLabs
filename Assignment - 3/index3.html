@@ -1,0 +1,56 @@
+<!-- // 3. Student Grading System with Extra Credit
+// Scenario:
+// A school assigns grades based on marks and awards extra credit if attendance is above 90%.
+// Grading:
+// 90+ → "A"
+// 80-89 → "B"
+// 70-79 → "C"
+// 60-69 → "D"
+// Below 60 → "F"
+// If attendance is above 90%, add 5 extra marks
+// Write a function calculateGrade(marks, attendance) that returns the student's final grade. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grading System</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Student Grading System</h2>
+        <input type="text" id="marks" placeholder="Enter student's marks" />
+        <input type="text" id="attendance" placeholder="Enter attendance percentage" />
+        <button onclick="calculateAndDisplayGrade()">Calculate Grade</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function calculateGrade(marks, attendance) {
+            const extraCredit = attendance > 90 ? 5 : 0;
+            const totalMarks = marks + extraCredit;
+            if (totalMarks >= 90) {
+                return "A";
+            } else if (totalMarks >= 80) {
+                return "B";
+            } else if (totalMarks >= 70) {
+                return "C";
+            } else if (totalMarks >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+
+        function calculateAndDisplayGrade() {
+            const marks = parseFloat(document.getElementById("marks").value);
+            const attendance = parseFloat(document.getElementById("attendance").value);
+            const grade = calculateGrade(marks, attendance);
+            document.getElementById("result").innerText = `Student's grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>

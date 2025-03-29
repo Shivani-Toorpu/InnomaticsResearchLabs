@@ -1,0 +1,51 @@
+<!-- // 4. Smart Traffic Light System
+// Scenario:
+// A smart traffic light changes signals based on traffic density:
+// "Heavy Traffic" → Green for 60 seconds
+// "Moderate Traffic" → Green for 40 seconds
+// "Light Traffic" → Green for 20 seconds
+// Write a function trafficLightControl(density) that returns how long the green signal will stay on. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Light System</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Smart Traffic Light System</h2>
+        <select id="density">
+            <option value="Heavy Traffic">Heavy Traffic</option>
+            <option value="Moderate Traffic">Moderate Traffic</option>
+            <option value="Light Traffic">Light Traffic</option>
+        </select>
+        <button onclick="calculateSignalDuration()">Get Signal Duration</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function trafficLightControl(density) {
+            switch (density) {
+                case "Heavy Traffic":
+                    return 60;
+                case "Moderate Traffic":
+                    return 40;
+                case "Light Traffic":
+                    return 20;
+                default:
+                    return 0;
+            }
+        }
+
+        function calculateSignalDuration() {
+            const density = document.getElementById("density").value;
+            const signalDuration = trafficLightControl(density);
+            document.getElementById("result").innerText = `Green signal duration: ${signalDuration} seconds`;
+        }
+    </script>
+</body>
+</html>

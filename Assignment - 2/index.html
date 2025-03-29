@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Coffee Shop</title>
+</head>
+<body>
+    <header id="home">
+        <nav class="navbar">
+            <img src="./images/logo.png" alt="Brewed Awakening Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <section class="hero">
+            <img src="./images/background.jpeg" alt="Coffee Shop" class="bg-image">
+            <div class="hero-content">
+                <h2>Welcome to</h2>
+                <h1>Brewed Awakening</h1>
+                <p>Where every sip brings a fresh start. Discover rich flavors, crafted just for you.</p>
+                <a href="#menu" class="btn">View Menu</a>
+            </div>
+        </section>
+    </header>
+
+    <section id="menu" class="nav-section">
+        <h2 class="title">Our Menu</h2>
+    
+        <!-- Coffee Drinks -->
+        <h3 class="category-title">Coffee Drinks</h3>
+        <div class="menu-grid">
+            <div class="card">
+                <img src="./images/espresso.jpeg" alt="Espresso">
+                <div class="card-content">
+                    <h3>Espresso</h3>
+                    <p>Rich and bold, a perfect single shot of strong coffee.</p>
+                    <span class="price">₹80</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/latte.jpeg" alt="Latte">
+                <div class="card-content">
+                    <h3>Latte</h3>
+                    <p>Silky steamed milk blended with smooth espresso.</p>
+                    <span class="price">₹150</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/cappuccino.jpeg" alt="Cappuccino">
+                <div class="card-content">
+                    <h3>Cappuccino</h3>
+                    <p>A balance of espresso, steamed milk, and frothy foam.</p>
+                    <span class="price">₹130</span>
+                </div>
+            </div>
+            
+        </div>
+    
+        <!-- Breakfast Items -->
+        <h3 class="category-title">Breakfast Items</h3>
+        <div class="menu-grid">
+            <div class="card">
+                <img src="./images/pancakes.jpeg" alt="Pancakes">
+                <div class="card-content">
+                    <h3>Pancakes</h3>
+                    <p>Fluffy pancakes topped with butter and maple syrup.</p>
+                    <span class="price">₹200</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/sandwich.jpeg" alt="Sandwich">
+                <div class="card-content">
+                    <h3>Sandwich</h3>
+                    <p>A delicious combination of fresh bread, eggs, and cheese.</p>
+                    <span class="price">₹180</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/croissant.jpeg" alt="Croissant">
+                <div class="card-content">
+                    <h3>Croissant</h3>
+                    <p>Buttery, flaky croissant baked to perfection.</p>
+                    <span class="price">₹120</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section id="about" class="nav-section">
+        <!-- A section with information about the coffee shop. Write a brief description of the shop, including its mission or history. -->
+         <h2 class="title">About Us</h2>
+
+         <div class="about-us">
+                <h2>Our Heritage</h2>
+                <p>At <strong>Brewed Awakening</strong>, we believe that coffee is more than just a drink—it's an experience, a ritual, and a moment of connection. Our journey began with a simple passion: to craft the finest coffee from ethically sourced beans and share the joy of a perfect cup with our community. From our humble beginnings to becoming a beloved gathering place, our story is one of dedication, craftsmanship, and a love for bold, rich flavors. Step into our world and taste the journey in every sip.</p>
+         </div>
+
+         <div class="about-us">
+                <h2>The Coffee Experience</h2>
+                <p>Every cup of coffee tells a story, and at <strong>Brewed Awakening</strong>, we ensure it's one worth savoring. Our beans are carefully selected from the best coffee-growing regions, roasted to perfection, and brewed with precision. Whether you're indulging in a velvety latte, a bold espresso, or a smooth cold brew, each sip delivers the perfect balance of aroma, taste, and texture. Our baristas are artists, crafting beverages that elevate your daily coffee ritual into something extraordinary. Come explore flavors that awaken your senses.</p>
+         </div>
+
+         <div class="about-us">
+                <h2>Meet the Team</h2>
+                <p>Behind every great cup of coffee is a team that truly cares. Our passionate baristas, expert roasters, and friendly staff work together to create an inviting space where coffee lovers can come together. We take pride in our craft, ensuring that every cup served is brewed with precision and love. Whether you're a regular or visiting for the first time, our team is here to make your experience special—because great coffee starts with great people. Say hello next time you stop by!</p>
+         </div>
+    </section>
+
+    <hr>
+
+    <section id="contact" class="nav-section">
+        <!-- A contact form with the following fields:
+                Name (text field)
+                Email (email field)
+                Message (textarea for message)
+                Submit button styled appropriately. 
+        -->
+        <h2 class="title">Contact Us</h2>
+
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <!-- A footer section with copyright and social media links. -->
+        <div>
+            <p>Copyright &copy; 2025 Brewed Awakening. All rights reserved.</p>
+        </div>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 
+#D1B794 – Light Coffee
+#C2A385 – Soft Coffee
+#B38E6A – Warm Coffee
+#A37A5A – Medium Coffee
+#926746 – Rich Coffee
+#805536 – Deep Coffee
+#6B4226 – Dark Coffee
+#56321D – Espresso Coffee
+#3E2414 – Bold Coffee
+#26150C – Black Coffee 
+*/
+
+header {
+    padding-top: 60px; /* Adjust for navbar height */
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #56321D;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row; /* Ensure items are in a row */
+    justify-content: center; /* Align center */
+    align-items: center;
+    list-style: none;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    white-space: nowrap; /* Ensure no line breaks */
+    gap: 12px; /* Adjust spacing */
+}
+
+.nav-links li {
+    display: inline-block; /* Ensures items remain inline */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: larger; /* Reduce size for smaller screens */
+    padding: 5px 8px; /* Adjust padding to fit */
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #26150C;
+    color: #C2A385;
+}
+
+/* Hero Section */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #26150C;
+}
+
+.bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Call-to-Action Button */
+.btn {
+    display: inline-block;
+    background-color: #926746;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #B38E6A;
+}
+
+/* Section Titles */
+
+.title {
+    font-size: 2.5rem;
+    color: #3E2414;
+    margin-bottom: 20px;
+}
+
+/* Section Styles */
+
+.nav-section {
+    background-color: #F5F1E7;
+    padding: 50px 20px;
+    text-align: center;
+    scroll-margin-top: 80px; /* Adjust based on navbar height */
+    /* padding-top: 20px; Adds additional spacing */
+}
+
+/* Menu Section */
+
+.category-title {
+    font-size: 1.8rem;
+    color: #56321D;
+    margin: 30px 0 15px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #3E2414;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #6B4226;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #A37A5A;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* About Us Section */
+
+.about-us {
+    background: #fff;
+    padding: 30px;
+    margin: 20px auto;
+    width: 70%;
+    border-left: 5px solid #56321D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    border-radius: 8px;
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    color: #56321D;
+    margin-bottom: 15px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #6B4226;
+}
+
+/* Contact Section */
+
+form {
+    background: #56321D;
+    padding: 30px;
+    width: 60%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+form label {
+    font-size: 1rem;
+    color: #D1B794;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+/* Input Fields & Textarea */
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #A37A5A;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+/* Submit Button */
+button {
+    background-color: #926746;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #B38E6A;
+}
+
+/* Footer */
+
+footer {
+    background-color: #3E2414;
+    color: #D1B794;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+
+/* Footer Content Containers */
+footer div {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Copyright Text */
+footer p {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Social Media Links */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #26150C;
+    color: #C2A385;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 400px) {
+    .nav-links {
+        gap: 6px; /* Reduce space further */
+        font-size: 0.8rem; /* Reduce text size */
+    }
+    
+    .nav-links a {
+        padding: 4px 6px; /* Reduce padding */
+    }
+}
+
+/* For Tablets and Small Screens */
+@media (max-width: 780px) {
+    /* Navbar */
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 70vh;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Menu Section */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About Us Section */
+    .about-us {
+        width: 90%;
+    }
+
+    /* Contact Form */
+    form {
+        width: 80%;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer div {
+        width: 100%;
+    }
+}
+
+/* For Mobile Screens */
+@media (max-width: 400px) {
+    /* Navbar */
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 5px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 60vh;
+    }
+
+    .hero-content {
+        max-width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Menu Section */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About Us Section */
+    .about-us {
+        width: 95%;
+        padding: 20px;
+    }
+
+    /* Contact Form */
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    /* Input Fields & Button */
+    form input,
+    form textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+
+    footer div {
+        width: 100%;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,48 @@
+<!-- // 1. ATM Withdrawal System
+// Scenario:
+// A customer wants to withdraw money from an ATM. Write a function atmWithdrawal(balance, amount, pin, enteredPin) that checks:
+// If enteredPin matches pin, proceed. Otherwise, return "Incorrect PIN"
+// If amount > balance, return "Insufficient Funds"
+// If amount is a multiple of 100, allow withdrawal, else return "Enter amount in multiples of 100" -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Withdrawal System</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>ATM Withdrawal</h2>
+        <input type="text" id="balance" placeholder="Enter your balance" />
+        <input type="text" id="amount" placeholder="Enter withdrawal amount" />
+        <input type="password" id="pin" placeholder="Set your PIN" />
+        <input type="password" id="enteredPin" placeholder="Enter your PIN" />
+        <button onclick="processWithdrawal()">Withdraw</button>
+        <div id="result"></div>
+    </div>
+    
+    <script>
+        function atmWithdrawal(balance, amount, pin, enteredPin) {
+            if (enteredPin !== pin) 
+                return "Incorrect PIN";
+            if (amount > balance) 
+                return "Insufficient Funds";
+            return amount % 100 === 0 ? `Withdrawn: ${amount}` : "Enter amount in multiples of 100";
+        }
+
+        function processWithdrawal() {
+            const balance = parseFloat(document.getElementById("balance").value);
+            const amount = parseFloat(document.getElementById("amount").value);
+            const pin = document.getElementById("pin").value;
+            const enteredPin = document.getElementById("enteredPin").value;
+            
+            document.getElementById("result").innerText = atmWithdrawal(balance, amount, pin, enteredPin);
+        }
+    </script>
+</body>
+</html>
